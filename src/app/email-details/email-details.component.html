@@ -1,0 +1,47 @@
+<div *ngIf="!emailToReceive; else showme " >
+  <h1 class="text-muted centeredItem">Click on the email to see details.</h1>
+</div>
+<ng-template #showme>
+  <div class="mr-5 mt-2">
+    <div class="row">
+      <div class="col-10">
+        <h2 class="float-left ml-1 text-muted">{{emailToReceive.Subject}}</h2>
+      </div>  
+      <div class="col-2">
+        <div class="float-right text-muted">
+          Move To: <button type="button" class="btn ml-2" style="background-color: #c5cdda; color: white;">Trash</button>
+        </div> 
+      </div>  
+    </div>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-8">
+        <h4 class="float-left ml-1 text-muted"><i class="fa fa-star  mr-2" style="color: orange;"></i>Designmodo to <a href="#">me</a></h4>
+      </div>  
+      <div class="col-4">
+        <div class=" float-right">
+          <p class="text-muted">2014-06-05 {{emailToReceive.time}} <i class="fa fa-info-circle fa-2x ml-2 mr-3" aria-hidden="true"></i> <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></p> 
+        </div>     
+      </div>  
+    </div>
+    <div class="col-12 emailSenderBackground mb-5">
+      {{emailToReceive.Body}}
+    </div>
+    <hr>
+    <div class="promotions">
+    
+        <div class="row">
+          <h5 class="col-4 text-muted" style="text-align: left;">Designmodo</h5>
+          <h5 class="col-4" style="text-align: center;"><strong>Exclusive Deal</strong></h5>
+          <h5 class="col-4 text-muted" style="text-align: right;">View in the browser</h5>
+        </div>
+        <hr>
+        <div class="promotionHeading">
+          <p style="text-align: center;"><strong>LAST DAY: 50% OFF Startup Framework</strong></p>
+        </div>
+        <p class="text-muted" style="text-align: center; font-size: large; font-weight: bold;">We offer you a 50% on <a style="color: black;" href="#"><u>Startup Design Framework</u></a> </p>
+        <p class="text-muted" style="text-align: center;font-weight: bold;">Startup Framework is a tool to help create website and is a nice </p>
+  
+    </div>
+  </div>
+</ng-template>

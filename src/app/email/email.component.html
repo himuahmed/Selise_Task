@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-3">
+    <div class="verticalLine">
+      <div class="ml-1" *ngFor="let email of emails">
+        <div class="isHovered" (click)="selectedEmail(email)" >
+          <div class="row">
+            <div class="col-3">      
+              <img src="{{email.userImage}}" alt="..." class="img-thumbnail profileThumbnail">
+            </div>
+            <div class="col-9">
+              <div class="row">
+                <div class="col-9">
+                  <h5 class="float-left text-muted">{{email.name}}</h5>
+                </div>
+                <div class="col-3">
+                  <h5 class="float-right mr-2 text-muted">{{email.time}}</h5>
+                </div>
+              </div>     
+              <p>{{email.Subject}}</p>
+            </div>
+          </div>
+          <p class="ml-2 mt-2 mb-2 text-muted">
+            <i class="fa fa-star fa-2x mr-2" style="color: orange;"></i> {{email.Body}}
+          </p>
+          <hr>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+  <div class="col-9 verticalLine">
+    <app-email-details [emailToReceive] = "emailToPass"></app-email-details>
+  </div>
+</div>
+
